@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="calendar-card">
+    <template>
+        <style>
+            :host{
+                border: 2px solid #296;
+                padding: 2px;
+                font-family: sans-serif;
+                font-size: 12px;
+                text-align: center;
+                display: inline-block
+            }
+            #campomes{
+                text-transform: uppercase;
+                margin-bottom: 3px;
+                background-color: aliceblue;
+                padding: 6px;
+            }
+            #campodia{
+                padding: 5px;
+                font-weight: bold;
+                font-size: 200%;
+                background-color: #eee;
+            }
+        </style>
+        <div id="campomes">{{mes}}</div>
+        <div id="campodia">{{dia}}</div>
+    </template>
+    <script>
+        Polymer({
+            is: 'calendar-card',
+            properties: {
+                mes: String,
+                dia: String
+            },
+            ready: function(){
+                var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                var today = new Date(); 
+                this.dia = this.dia || today.getDay();
+                this.mes = this.mes || meses[today.getMonth()];
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Probando el banner-alert</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .alert{
+            background-color: aquamarine;
+        }
+    </style>
+    <style is="custom-style">
+        iron-icon{
+            color: red;
+            --iron-icon-height: 72px;
+            --iron-icon-width: 72px;
+        }
+    </style>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="alert-banner.html">
+</head>
+<body>
+   <h1>Esto es un test del componet alert-banner</h1>
+   <alert-banner></alert-banner>
+   <p>Este recuadro de arriba es un webcomponent. Abajo tenemos un DIV que tiene la misma clase "alert" que es distinta de la definida en el web component. Por eso cada una tiene un color.</p>
+   <div class="alert">Esto es una capa con class="alert"</div>
+   <p>Ahora tengo un icono que está puesto de manera independiente</p>
+   <iron-icon icon="icons:build"></iron-icon>
+</body>
+</html>
