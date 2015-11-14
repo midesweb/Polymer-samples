@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<dom-module id="countries-data-ajax">
+    <template>
+        <iron-ajax
+            auto
+            url$="https://restcountries.eu/rest/v1/name/{{querystring}}"
+            last-response="{{countries}}"
+        ></iron-ajax>
+    </template>
+    <script>
+        Polymer({
+            is: 'countries-data-ajax',
+            properties: {
+                countries: {
+                    type: Array,
+                    value: [],
+                    notify: true
+                },
+                querystring: {
+                    type: String,
+                    value: "",
+                    notify: true
+                }
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,27 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../countries-data/countries-data.html">
+
+<dom-module id="select-paises-data-array">
+	<template>
+		<countries-data-array countries="{{paises}}"></countries-data-array>
+		<select>
+			<template is="dom-repeat" items={{paises}}>
+				<content select=".default"></content>
+				<option value="{{index}}">{{item}}</option>
+			</template>
+		</select>
+	</template>
+	<script>
+		Polymer({
+			is: 'select-paises-data-array', 
+			properties: {
+				paises: {
+					type: Array
+				}
+			},
+			ready: function(){
+				console.log(this.countries);
+			}
+		});
+	</script>
+</dom-module>

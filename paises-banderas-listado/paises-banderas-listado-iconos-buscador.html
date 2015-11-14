@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../countries-data-ajax/countries-data-ajax.html">
+<link rel="import" href="../bower_components/dw-flagsprites/dw-flagsprites.html">
+<link rel="import" href="../paises-banderas-listado/paises-banderas-listado-iconos.html">
+
+<dom-module id="paises-banderas-listado-iconos-buscador">
+    <template>
+        <style>
+            .buscar {
+                font-size: 1.4em;
+            }
+        </style>
+        <countries-data-ajax countries="{{paises}}" querystring="{{busqueda}}"></countries-data-ajax>
+        <p class="buscar">
+            Buscar: <input type="text" value={{busqueda::input}}>
+        </p>
+        <template is="dom-repeat" items="{{paises}}">
+            <p>
+                <dw-flagsprites code="[[code(item.alpha2Code)]]"></dw-flagsprites>
+                <span>{{item.alpha2Code}} - {{item.name}}</span>
+            </p>
+        </template>
+    </template>
+    <script>
+    Polymer({
+        is: 'paises-banderas-listado-iconos-buscador',
+        properties: {
+            paises:{
+                type: Array
+            },
+            busqueda: {
+                type: String,
+                value: "esp"
+            }
+        },
+        ready: function(){
+            console.log(this.paises);
+        },
+        code: function(code){
+            return code.toLowerCase();
+        }
+    });
+    </script>
+</dom-module>

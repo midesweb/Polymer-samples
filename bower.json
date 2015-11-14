@@ -18,6 +18,9 @@
   "dependencies": {
     "google-map": "GoogleWebComponents/google-map#~1.1.6",
     "paper-button": "PolymerElements/paper-button#~1.0.8",
-    "iron-icons": "PolymerElements/iron-icons#~1.0.4"
+    "iron-icons": "PolymerElements/iron-icons#~1.0.4",
+    "flag-icon": "~0.11.1",
+    "dw-flagsprites": "~0.0.3",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.0"
   }
 }

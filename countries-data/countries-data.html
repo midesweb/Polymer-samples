@@ -1,0 +1,43 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="countries-data">
+    <script>
+        Polymer({
+            is: 'countries-data',
+            properties: {
+                countries: {
+                    type: Array,
+                    value: [],
+                    notify: true
+                }
+            },
+            ready: function(){
+                this.countries = [
+                    {
+                        name: "Argentina",
+                        alpha2Code: "AR"   
+                    },
+                    {
+                        name: "España",
+                        alpha2Code: "ES"   
+                    },
+                    {
+                        name: "Uruguay",
+                        alpha2Code: "UY"   
+                    },
+                    {
+                        name: "Bolibia",
+                        alpha2Code: "BO"   
+                    },
+                    {
+                        name: "Brasil",
+                        alpha2Code: "BR"   
+                    },
+                    {
+                        name: "Francia",
+                        alpha2Code: "FR"   
+                    }
+                ];
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="select-paises">
+	<template>
+		<select>
+			<template is="dom-repeat" items={{paises}}>
+				<content select=".default"></content>
+				<option value="{{index}}">{{item}}</option>
+			</template>
+		</select>
+	</template>
+	<script>
+		Polymer({
+			is: 'select-paises', 
+			ready: function(){
+				this.paises = ["Alemania", "Argentina", "Chile", "España", "Francia", "México"];
+			}
+		});
+	</script>
+</dom-module>

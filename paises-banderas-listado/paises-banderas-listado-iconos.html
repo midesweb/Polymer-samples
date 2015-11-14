@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../countries-data-ajax/countries-data-ajax.html">
+<link rel="import" href="../bower_components/dw-flagsprites/dw-flagsprites.html">
+
+<dom-module id="paises-banderas-listado-iconos">
+    <template>
+        <style>
+            p{
+                font-family: trebuchet ms, arial, verdana, sans-serif;
+            }
+            span{
+                display: inline-block;
+                position: relative;
+                top: -10px;
+                margin-bottom: -10px;
+            }
+        </style>
+        <countries-data-ajax countries="{{paises}}"></countries-data-ajax>
+        <template is="dom-repeat" items="{{paises}}">
+            <p>
+                <dw-flagsprites code="[[code(item.alpha2Code)]]"></dw-flagsprites>
+                <span>{{item.alpha2Code}} - {{item.name}}</span>
+            </p>
+        </template>
+    </template>
+    <script>
+    Polymer({
+        is: 'paises-banderas-listado-iconos',
+        properties: {
+            paises:{
+                type: Array
+            }
+        },
+        ready: function(){
+            console.log(this.paises);
+        },
+        code: function(code){
+            return code.toLowerCase();
+        }
+    });
+    </script>
+</dom-module>

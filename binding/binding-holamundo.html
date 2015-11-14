@@ -1,0 +1,27 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="binding-holamundo">
+    <template>
+        <style>
+        input {
+            font-size: 1.2em;
+            color: red;
+        }
+        </style>
+        <h1>Hola {{name}}</h1>
+        <p>
+            Escribe tu nombre: <input type="text" value="{{name::input}}">
+        </p>
+    </template>
+    <script>
+    Polymer({
+        is: 'binding-holamundo',
+        properties: {
+            name: {
+                type: String,
+                value: 'Miguel',
+                notify: true
+            }
+        }
+    })
+    </script>
+</dom-module>

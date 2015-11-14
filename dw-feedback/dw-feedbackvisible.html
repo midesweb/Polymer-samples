@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="dw-feedbackvisible">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+            p{
+                background-color: #de8a0b;
+                padding: 5px 10px;
+                color: aliceblue;
+                font-family: sans-serif;
+                border-radius: 6px;
+                font-weight: bold;
+            }
+            .cerrar{
+                font-size: .8em;
+                font-weight: normal;
+                cursor: pointer;
+                position: fixed;
+                right: 20px;
+            }
+        </style>
+        <p hidden="{{!visible}}">
+            <content select=".message"></content>
+            <span class="cerrar" on-tap="cerrar">Cerrar</span>
+        </p>
+    </template>
+    <script>
+        Polymer({
+            is: 'dw-feedbackvisible',
+            properties: {
+                visible: {
+                    type: Boolean,
+                    value: false,
+                    notify: false
+                }
+            },
+            cerrar: function(){
+                this.visible = false;
+            }
+        });
+    </script>
+</dom-module>
