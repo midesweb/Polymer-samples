@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<dom-module id="alarma-on-off">
+    <style>
+        iron-icon{
+            color: var(--color, orange);
+            --iron-icon-width: 300px;
+            --iron-icon-height: 300px;
+        }
+    </style>
+    <template>
+        <p on-tap="cambiaIcono">
+            <iron-icon icon="{{icono}}"></iron-icon> {{icono}}
+        </p>
+    </template>
+    <script>
+    Polymer({
+        is: 'alarma-on-off',
+        properties: {
+            icono: {
+                type: String,
+                value: 'icons:alarm-on'
+            },
+            color: {
+                type: String,
+                value: 'red'
+            }
+        },
+        cambiaIcono: function(){
+            if(this.icono == 'icons:alarm-on'){
+                this.icono = 'icons:alarm-off';
+            }else{
+                this.icono = 'icons:alarm-on';;
+            }
+            this.cambiaColor();
+        },
+        cambiaColor: function(){
+            if(this.icono == 'icons:alarm-on'){
+                this.color = 'green';
+            }else{
+                this.color = 'red';;
+            }
+            this.customStyle['--color'] = this.color;
+            Polymer.updateStyles();
+        },
+        ready: function(){
+            this.cambiaColor();
+        }
+    });
+    </script>
+</dom-module>

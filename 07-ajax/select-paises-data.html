@@ -1,0 +1,23 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="countries-data.html">
+
+<dom-module id="select-paises-data">
+	<template>
+		<countries-data countries="{{paises}}"></countries-data>
+		<content select=".default"></content>
+		<template is="dom-repeat" items={{paises}}>
+			<option value="{{item.alpha2Code}}">{{item.name}}</option>
+		</template>
+	</template>
+	<script>
+		Polymer({
+			is: 'select-paises-data', 
+			extends: 'select',
+			properties: {
+				paises: {
+					type: Array
+				}
+			}
+		});
+	</script>
+</dom-module>

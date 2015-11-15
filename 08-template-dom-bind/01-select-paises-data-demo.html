@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Select paises polymer</title>
+	<script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="import" href="select-paises-data.html">
+	<link rel="import" href="countries-data.html">
+</head>
+<body>
+	<template is="dom-bind">
+		<countries-data countries="{{c}}"></countries-data>
+		<select is="select-paises-data" paises="{{c}}">
+			<option value="-" class="default">Escoge un país (estoy desacoplado)</option>
+		</select>	
+	</template>
+</body>
+</html>
