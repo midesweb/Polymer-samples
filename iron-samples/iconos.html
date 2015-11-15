@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Iconos</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
     <style is="custom-style">
         .activo{ 
-            color: #bc35a7;
+            --iron-icon-fill-color: #ff5555;
             --iron-icon-width: 50px;
             --iron-icon-height: 50px;
+            color: darkcyan;
         }
     </style>
     <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
@@ -17,6 +19,7 @@
     <h1>Trabajo con iron-icons</h1>
     <p>Estos elementos realmente están pensados para combinarse con otros. Puedes ver el <a href="https://elements.polymer-project.org/elements/iron-icons?view=demo:demo/index.html&active=iron-icons">conjunto de iconos básico</a>.</p>
     <iron-icon icon="icons:accessibility" class="activo"></iron-icon>
+    <iron-icon icon="icons:warning" class="activo"></iron-icon>
     <div class="activo">
         <iron-icon icon="icons:alarm"></iron-icon>
     </div>
