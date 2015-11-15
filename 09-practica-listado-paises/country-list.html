@@ -1,0 +1,20 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="country-card.html">
+<dom-module id="country-list">
+<template>
+    <template is="dom-repeat" items="{{countries}}">
+        <country-card item="{{item}}"></country-card>
+    </template>
+</template>
+<script>
+Polymer({
+    is: 'country-list',
+    properties:{
+        countries: {
+            type: Array,
+            notify: true
+        }
+    }
+});
+</script>
+</dom-module>

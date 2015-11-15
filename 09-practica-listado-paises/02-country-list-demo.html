@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country list demo</title>
+    <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="country-list.html">
+    <link rel="import" href="../08-template-dom-bind/countries-data-ajax.html">
+</head>
+<body>
+    <template is="dom-bind">
+        <countries-data-ajax countries="{{countries}}" querystring="esp"></countries-data-ajax>
+        <country-list countries="{{countries}}"></country-list>
+    </template>
+</body>
+</html>
